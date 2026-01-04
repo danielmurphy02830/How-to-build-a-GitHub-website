@@ -4,63 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Build a Free Website with GitHub Pages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #2f81f7;
+            --bg: #f6f8fa;
+            --text: #1f2328;
+            --card-bg: #ffffff;
+            --border: #d0d7de;
+            --accent: #6e7781;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 40px auto;
             padding: 20px;
         }
-        h1, h2 {
-            color: #2c3e50;
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
         }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1f2328;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease;
+        }
+
+        .step-card:hover {
+            border-color: var(--primary);
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-right: 12px;
+        }
+
+        ol {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
         code {
-            background-color: #f4f4f4;
-            padding: 2px 5px;
-            border-radius: 3px;
+            background-color: #afb8c133;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.9em;
         }
+
         .timestamp {
-            font-size: 0.8em;
-            color: #7f8c8d;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: #eff1f3;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 8px;
+            display: inline-block;
+        }
+
+        .url-box {
+            background: #eef6ff;
+            border: 1px dashed var(--primary);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--accent);
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        /* Responsive tweak */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.7rem; }
         }
     </style>
 </head>
 <body>
-    <h1>How to Build a Free Website in Under 20 Minutes with GitHub Pages</h1>
-    
-    <p>In today’s digital age, having a website is essential. In this guide, we'll show you how to build and host a simple, effective website for free using GitHub Pages.</p>
 
-    <h2>Step 1: Create a GitHub Account</h2>
-    <p>Sign up at <a href="https://github.com/">GitHub.com</a>. It's free and easy.</p>
+    <div class="container">
+        <header>
+            <h1>Deploy Your Site in 20 Minutes</h1>
+            <p class="subtitle">A beginner-friendly guide to hosting with <strong>GitHub Pages</strong>.</p>
+        </header>
 
-    <h2>Step 2: Create a New Repository</h2>
-    <ol>
-        <li>Go to <strong>Repositories</strong> and click <strong>New</strong>. <span class="timestamp">[00:00:33]</span></li>
-        <li>Name your repository (e.g., <code>my-website</code>). <span class="timestamp">[00:00:39]</span></li>
-        <li>Set visibility to <strong>Public</strong>. <span class="timestamp">[00:01:04]</span></li>
-        <li>Add a <strong>README</strong> file. <span class="timestamp">[00:01:09]</span></li>
-        <li>Click <strong>Create repository</strong>.</li>
-    </ol>
+        <div class="step-card">
+            <h2><span class="step-number">1</span> Create a GitHub Account</h2>
+            <p>Go to <a href="https://github.com/" target="_blank">GitHub.com</a> and sign up for a free account. This will be the home for your website's code.</p>
+        </div>
 
-    <h2>Step 3: Upload Your Files</h2>
-    <ol>
-        <li>Click <strong>Add file</strong> > <strong>Upload files</strong>. <span class="timestamp">[00:01:36]</span></li>
-        <li>Upload your <code>index.html</code> file. <span class="timestamp">[00:01:40]</span></li>
-        <li>Click <strong>Commit changes</strong>. <span class="timestamp">[00:01:46]</span></li>
-    </ol>
+        <div class="step-card">
+            <h2><span class="step-number">2</span> Create a New Repository</h2>
+            <ol>
+                <li>Click <strong>New</strong> on the Repositories sidebar. <span class="timestamp">00:33</span></li>
+                <li>Name your repository (e.g., <code>my-website</code>). <span class="timestamp">00:39</span></li>
+                <li>Ensure visibility is set to <strong>Public</strong>. <span class="timestamp">01:04</span></li>
+                <li>Check the box to <strong>Add a README file</strong>. <span class="timestamp">01:09</span></li>
+                <li>Click <strong>Create repository</strong>.</li>
+            </ol>
+        </div>
 
-    <h2>Step 4: Configure GitHub Pages</h2>
-    <ol>
-        <li>Go to <strong>Settings</strong> > <strong>Pages</strong>. <span class="timestamp">[00:02:00]</span></li>
-        <li>Select the <strong>main</strong> branch and click <strong>Save</strong>. <span class="timestamp">[00:02:03]</span></li>
-    </ol>
+        <div class="step-card">
+            <h2><span class="step-number">3</span> Upload Your Content</h2>
+            <ol>
+                <li>Inside your repo, click <strong>Add file</strong> &gt; <strong>Upload files</strong>. <span class="timestamp">01:36</span></li>
+                <li>Drag and drop your <code>index.html</code> file. <span class="timestamp">01:40</span></li>
+                <li>Scroll down and click <strong>Commit changes</strong>. <span class="timestamp">01:46</span></li>
+            </ol>
+        </div>
 
-    <h2>Step 5: View Your Site!</h2>
-    <p>Your URL will be: <code>https://[username].github.io/[repo-name]/</code>. Wait a minute for it to go live! <span class="timestamp">[00:02:22]</span></p>
+        <div class="step-card">
+            <h2><span class="step-number">4</span> Activate GitHub Pages</h2>
+            <ol>
+                <li>Navigate to <strong>Settings</strong> (top tab) &gt; <strong>Pages</strong> (left menu). <span class="timestamp">02:00</span></li>
+                <li>Under "Branch", select the <strong>main</strong> branch and click <strong>Save</strong>. <span class="timestamp">02:03</span></li>
+            </ol>
+        </div>
 
-    <hr>
-    <p><em>Built with guidance from Dan Murphy's "Talk Tech To Me" series.</em></p>
+        <div class="step-card">
+            <h2><span class="step-number">5</span> Success! View Your Site</h2>
+            <p>GitHub will now generate your live link. It usually looks like this:</p>
+            <div class="url-box">
+                <code>https://[your-username].github.io/[repo-name]/</code>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--accent); margin-top: 10px; text-align: center;">
+                <em>Note: It may take up to 2 minutes for the site to appear the first time.</em> <span class="timestamp">02:22</span>
+            </p>
+        </div>
+
+        <footer>
+            <p>Built with guidance from <strong>Dan Murphy's</strong> <em>"Talk Tech To Me"</em> series.</p>
+        </footer>
+    </div>
+
 </body>
 </html>
